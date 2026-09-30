@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sir Rhaely Sumabat | Grade 9 Alcala</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <canvas id="mathCanvas"></canvas>
+
+    <header class="navbar">
+        <div class="nav-logo">9-ALCALA</div>
+        <div class="nav-links">
+            <a href="#letter">Message for Sir</a>
+            <a href="#envelope-section">Class Envelope</a>
+            <a href="#highlights">Advisor Highlights</a>
+            <a href="#interactive">Formula Tool</a>
+            <a href="#quiz">Math Quiz</a>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container hero-content">
+            <span class="badge">FEU ROOSEVELT • GRADE 9 ALCALA</span>
+            <h1>Dedicated to Our Advisor & Math Teacher<br><span class="highlight">Sir Rhaely Sumabat</span></h1>
+            <p class="hero-subtitle">
+                Guiding us through equations, variables, and life lessons. Thank you for making every problem solvable and keeping Grade 9 Alcala united!
+            </p>
+            
+            <div class="hero-actions">
+                <button class="btn btn-primary" onclick="launchConfetti()">🎉 Celebrate Sir Sumabat!</button>
+                <button class="btn btn-outline" onclick="scrollToSection('letter')">Read Class Letter</button>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-card" onclick="triggerStatEffect(this)">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Dedication</span>
+                </div>
+                <div class="stat-card" onclick="triggerStatEffect(this)">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Patience & Guidance</span>
+                </div>
+                <div class="stat-card" onclick="triggerStatEffect(this)">
+                    <span class="stat-number">9-Alcala</span>
+                    <span class="stat-label">Our Section</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+
+        <section id="letter" class="card letter-card clickable-card" onclick="toggleAdvisorPhoto()">
+            <div class="card-header">
+                <h2>A Message for Sir Rhaely Sumabat</h2>
+                <span class="math-badge">From 9-Alcala</span>
+            </div>
+            <p class="click-hint">✨ Click this card to reveal a photo of Sir Rhaely!</p>
+            
+            <div class="letter-body">
+                <p>Dear Sir Rhaely Sumabat,</p>
+                <p>
+                    Teaching mathematics is no easy task, but you manage to make every formula, proof, and lesson accessible and structured for us. We appreciate the time, effort, and patience you put into every single class to ensure that no one gets left behind.
+                </p>
+                <p>
+                    Beyond teaching math, thank you for being a steady and supportive Section Advisor to <strong>Grade 9 Alcala</strong>. Your guidance keeps our class grounded, organized, and motivated to continuously put in our best effort.
+                </p>
+                <p>
+                    Thank you for being a reliable mentor and leader for our homeroom family this school year!
+                </p>
+                
+                <div id="advisorPhotoContainer" class="advisor-photo-container hidden">
+                    <img src="rhaely.png" alt="Sir Rhaely Sumabat" class="advisor-photo">
+                    <p class="photo-caption">Sir Rhaely Sumabat 📸</p>
+                </div>
+
+                <div class="signature-block">
+                    <p class="sign-off">With high regard and gratitude,</p>
+                    <p class="signers"><strong>Your Grade 9 Alcala Students</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="envelope-section" class="card envelope-card">
+            <div class="card-header">
+                <h2>Special Class Memory</h2>
+                <span class="math-badge">💌 Envelope</span>
+            </div>
+            <p class="card-desc">Click the envelope below to open it and view our 9-Alcala class photo!</p>
+
+            <div class="envelope-wrapper">
+                <div class="envelope" id="classEnvelope" onclick="openEnvelope()">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-front">✉️ Tap to Open Envelope</div>
+                </div>
+                
+                <div id="classPhotoContainer" class="class-photo-container hidden">
+                    <img src="class.png" alt="Grade 9 Alcala Class Photo" class="class-photo">
+                    <p class="photo-caption">Grade 9 Alcala Family 🏫✨</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="highlights" class="card">
+            <div class="card-header">
+                <h2>Advisor & Section Highlights</h2>
+                <span class="math-badge">✦ Highlights</span>
+            </div>
+            <p class="card-desc">Explore key areas of Sir Sumabat's impact on Grade 9 Alcala. Click through the tabs below!</p>
+
+            <div class="tab-controls">
+                <button class="tab-btn active" onclick="switchTab(event, 'tab-guidance')">🏛️ Homeroom Guidance</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-math')">📐 Math Mastery</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab-unity')">🤝 Section Unity</button>
+            </div>
+
+            <div class="tab-content-container">
+                <!-- Tab 1 -->
+                <div id="tab-guidance" class="tab-panel active">
+                    <h3>Homeroom Leadership & Care</h3>
+                    <p>As our Grade 9 Alcala Advisor, Sir Rhaely leads with structure and fairness. Whether checking in on class requirements or helping us navigate daily school responsibilities, he keeps our homeroom organized and prepared.</p>
+                    <div class="highlight-box">
+                        <span class="quote-symbol">“</span>
+                        <p>An advisor doesn't just manage a classroom; they build an environment where students feel supported to excel.</p>
+                    </div>
+                </div>
+
+                <!-- Tab 2 -->
+                <div id="tab-math" class="tab-panel">
+                    <h3>Making Math Accessible</h3>
+                    <p>Sir Sumabat breaks down complex algebraic equations and geometric concepts step-by-step. His structured teaching style helps us tackle difficult problems with clarity and confidence.</p>
+                    <div class="highlight-box">
+                        <span class="quote-symbol">“</span>
+                        <p>Step-by-step problem solving in class teaches us patience and logic that go far beyond written exams.</p>
+                    </div>
+                </div>
+
+                <!-- Tab 3 -->
+                <div id="tab-unity" class="tab-panel">
+                    <h3>Building Team Alcala</h3>
+                    <p>Through every event, project, and school activity, Sir Sumabat encourages Grade 9 Alcala to collaborate, support one another, and take pride in our collective growth as a section.</p>
+                    <div class="highlight-box">
+                        <span class="quote-symbol">“</span>
+                        <p>Strong sections are built on mutual respect, hard work, and shared goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="interactive" class="card">
+            <div class="card-header">
+                <h2>Interactive Formula Generator</h2>
+                <span class="math-badge">f(x)</span>
+            </div>
+            <p class="card-desc">Click the button below to generate key values & mathematical equations taught by Sir Sumabat!</p>
+
+            <div class="formula-display" id="formulaOutput">
+                <span class="formula-code">Class Success = (Hard Work + Curiosity) × Guidance</span>
+            </div>
+
+            <button class="btn btn-primary center-btn" onclick="generateNewFormula()">🎲 Generate Random Lesson</button>
+        </section>
+
+        <section id="quiz" class="card">
+            <div class="card-header">
+                <h2>Quick Alcala Math Challenge</h2>
+                <span class="math-badge">? / 100</span>
+            </div>
+            <p class="card-desc">Test your math knowledge in honor of Sir Sumabat!</p>
+
+            <div class="quiz-box">
+                <h3 id="quizQuestion">Loading question...</h3>
+                <div class="quiz-options" id="quizOptions"></div>
+                <div id="quizFeedback" class="quiz-feedback"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Made with appreciation for <strong>Sir Rhaely Sumabat</strong></p>
+            <p class="sub-footer">FEU Roosevelt • Grade 9 Alcala</p>
+        </div>
+    </footer>
+
+    <script>
+    
+        const canvas = document.getElementById('mathCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const mathSymbols = ['+', '−', '×', '÷', '=', '√', 'π', 'x', 'y', '∞', '9-A'];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.symbol = mathSymbols[Math.floor(Math.random() * mathSymbols.length)];
+                this.size = Math.random() * 16 + 12;
+                this.speedY = Math.random() * -1 - 0.3;
+                this.opacity = Math.random() * 0.25 + 0.05;
+            }
+            update() {
+                this.y += this.speedY;
+                if (this.y < -20) {
+                    this.y = canvas.height + 20;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+            draw() {
+                ctx.fillStyle = `rgba(139, 30, 30, ${this.opacity})`;
+                ctx.font = `${this.size}px 'Fira Code', monospace`;
+                ctx.fillText(this.symbol, this.x, this.y);
+            }
+        }
+
+        for (let i = 0; i < 45; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        function launchConfetti() {
+            for (let i = 0; i < 60; i++) {
+                const conf = document.createElement('div');
+                conf.className = 'confetti-piece';
+                conf.style.left = Math.random() * 100 + 'vw';
+                conf.style.backgroundColor = Math.random() > 0.5 ? '#8B1E1E' : '#2B2D31';
+                conf.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
+                document.body.appendChild(conf);
+                setTimeout(() => conf.remove(), 3500);
+            }
+        }
+
+        function toggleAdvisorPhoto() {
+            const photoContainer = document.getElementById('advisorPhotoContainer');
+            photoContainer.classList.toggle('hidden');
+        }
+
+        function openEnvelope() {
+            const envelope = document.getElementById('classEnvelope');
+            const classPhoto = document.getElementById('classPhotoContainer');
+            envelope.classList.add('open');
+            setTimeout(() => {
+                envelope.style.display = 'none';
+                classPhoto.classList.remove('hidden');
+                launchConfetti();
+            }, 600);
+        }
+
+        function switchTab(event, tabId) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const panels = document.querySelectorAll('.tab-panel');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            panels.forEach(panel => panel.classList.remove('active'));
+
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        const formulas = [
+            "Class Success = (Hard Work + Curiosity) × Guidance",
+            "Solve(Problem) => Step-by-Step Patience",
+            "Grade 9 Alcala = Unity + Respect + Math Skills",
+            "Sir Sumabat's Impact = Infinite Positive Energy",
+            "Confidence = Practice² + Encouragement"
+        ];
+
+        function generateNewFormula() {
+            const output = document.getElementById('formulaOutput');
+            const randomIndex = Math.floor(Math.random() * formulas.length);
+            output.innerHTML = `<span class="formula-code">${formulas[randomIndex]}</span>`;
+        }
+
+        const quizData = [
+            { question: "Which section is Sir Rhaely Sumabat advising?", options: ["Grade 9 Manila", "Grade 9 Alcala", "Grade 8 Alamid", "Grade 9 Rizal"], correct: 1 },
+            { question: "Which school does 9-Alcala belong to?", options: ["FEU Manila", "FEU Roosevelt", "FEU Tech", "FEU Diliman"], correct: 1 },
+            { question: "What essential quality makes math problems easier to solve in Sir Sumabat's class?", options: ["Guessing", "Step-by-step patience & practice", "Skipping steps", "Rushing"], correct: 1 },
+            { question: "What is 9-Alcala's ultimate formula for success?", options: ["Hard Work + Collaboration + Guidance", "Procrastination × Luck", "Pure Guesswork", "Sleeping through Homeroom"], correct: 0 },
+            { question: "Who keeps Grade 9 Alcala organized, guided, and on track every day?", options: ["Sir Rhaely Sumabat", "The Math Genie", "Section Officer Bot", "The Class Mascot"], correct: 0 },
+            { question: "What is the secret to mastering ALEKS math topics in 9-Alcala?", options: ["Teamwork & Consistent Practice", "Cramming 5 minutes before", "Closing your eyes and clicking", "Copying answers"], correct: 0 },
+            { question: "How does 9-Alcala tackle tough equations in math class?", options: ["One step at a time with logic", "Panic and give up", "Blame the variables", "Erase the paper"], correct: 0 },
+            { question: "What is 9-Alcala's ultimate strategy when Sir Sumabat calls on someone?", options: ["Eye contact to show dominance", "Deeply studying the floor tiles", "Telepathy with a classmate", "Pretending Wi-Fi disconnected"], correct: 1 },
+            { question: "What is 9-Alcala's unofficial motto when facing a long math problem?", options: ["We came, we saw, we solved!", "Slope is a mindset.", "If x is missing, leave him alone", "Sleep over study"], correct: 1 },
+            { question: "What happens when Sir Sumabat says 'This lesson is very easy'?", options: ["Everyone gets 100%", "Prepare for 10 steps of algebra", "We go home early", "Math becomes optional"], correct: 1 },
+            { question: "Who keeps Grade 9 Alcala organized and functioning every day?", options: ["Sir Rhaely Sumabat", "A calculator with no back cover", "The classroom fan", "Pythagoras"], correct: 0 },
+            { question: "How does 9-Alcala tackle ALEKS monitoring topics?", options: ["Teamwork, focus, and support", "Cramming 50 topics at 11:59 PM", "Staring until it solves itself", "Asking ChatGPT"], correct: 0 },
+            { question: "What is the most frequent question asked in 9-Alcala Homeroom?", options: ["Sir, is this recorded?", "Sir, can we eat now?", "Sir, why do we need to find X?", "All of the above"], correct: 3 },
+            { question: "Which of the following statements is TRUE?", options: ["a < 0 means the parabola opens downward", "Pasado lahat ng students sa Alcala", "1 + 1 = 4", "Depende kung 3 yan"], correct: 0 },
+            { question: "What is the slope-intercept form of a linear equation?", options: ["y = mx + b", "y = my + ex (Relationship status)", "a² + b² = c²", "help = please + sir"], correct: 0 },
+            { question: "Why do we always look for 'x' in Algebra class?", options: ["It refuses to stay in one place", "x = (y₂ - y₁) / (x₂ - x₁)", "An unsolved mystery of 9-Alcala", "Because Sir Sumabat told us to"], correct: 3 },
+            { question: "In the linear equation y = -2x + 7, what is the y-intercept (b)?", options: ["-2", "=", "7", "Where my brain turns off"], correct: 2 },
+            { question: "What is the slope of a vertical line?", options: ["0", "1", "Undefined (like my sleep schedule)", "Infinite motivation"], correct: 2 },
+            { question: "If two lines are parallel, what can you say about their relationship?", options: ["Equal slopes and never meet (tragic)", "Best friends forever", "They hate each other", "Product is -1"], correct: 0 },
+            { question: "What is the square root of 144?", options: ["10", "14", "12", "Whatever Sir Sumabat says it is"], correct: 2 }
+        ];
+    
+        let currentQuiz = 0;
+
+        function loadQuiz() {
+            const q = quizData[currentQuiz];
+            document.getElementById('quizQuestion').innerText = q.question;
+            const optionsDiv = document.getElementById('quizOptions');
+            const feedback = document.getElementById('quizFeedback');
+            optionsDiv.innerHTML = '';
+            feedback.innerText = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'btn btn-outline quiz-opt-btn';
+                btn.innerText = opt;
+                btn.onclick = () => checkAnswer(idx);
+                optionsDiv.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selected) {
+            const feedback = document.getElementById('quizFeedback');
+            if (selected === quizData[currentQuiz].correct) {
+                feedback.innerText = "✨ Correct! Excellent job!";
+                feedback.style.color = "#15803d";
+                launchConfetti();
+            } else {
+                feedback.innerText = "❌ Not quite! Sir Sumabat says: Try again!";
+                feedback.style.color = "#8B1E1E";
+            }
+            setTimeout(() => {
+                currentQuiz = (currentQuiz + 1) % quizData.length;
+                loadQuiz();
+            }, 1800);
+        }
+
+        loadQuiz();
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function triggerStatEffect(element) {
+            element.style.transform = "scale(1.08) translateY(-5px)";
+            setTimeout(() => element.style.transform = "", 300);
+        }
+    </script>
+</body>
+</html>
